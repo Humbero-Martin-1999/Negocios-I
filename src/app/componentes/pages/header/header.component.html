@@ -1,0 +1,57 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary" data-bs-theme="dark">
+  <div class="container-fluid d-flex align-items-center justify-content-between">
+
+    <!-- Izquierda: Logo + Nombre -->
+    <a class="navbar-brand d-flex align-items-center" routerLink="/home" style="font-size: 30px; color: rgb(222, 184, 135); gap: 10px;">
+      <img src="Chido.png" style="height:40px;" />
+      Gym Gallery
+    </a>
+
+    <!-- Centro: Barra con Mujer, Hombre, Suplementos -->
+    <ul class="nav mx-auto" *ngIf="!isLandingPage" style="font-size: 20px;">
+      <li class="nav-item">
+        <a routerLink="/ropa/mujer" routerLinkActive="active" class="nav-link">Mujer</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/ropa/hombre" routerLinkActive="active" class="nav-link">Hombre</a>
+      </li>
+      <li class="nav-item">
+        <a routerLink="/suplementos" routerLinkActive="active" class="nav-link">Suplementos</a>
+      </li>
+    </ul>
+
+    <!-- Derecha: Buscador + Iconos -->
+    <div class="d-flex align-items-center gap-3" *ngIf="!isLandingPage">
+      <form (submit)="onSearch($event)" class="d-flex" role="search" aria-label="Buscar productos">
+        <input
+          class="form-control"
+          type="search"
+          placeholder="Buscar..."
+          aria-label="Buscar productos"
+          [value]="searchQuery()"
+          (input)="searchQuery.set($any($event.target).value)"
+          style="width: 200px;"
+        />
+        <button class="btn btn-outline-light ms-2" type="submit" aria-label="Buscar">
+          <i class="fa fa-search"></i>
+        </button>
+      </form>
+
+      <a routerLink="/wishlist" class="text-white" aria-label="Wishlist" title="Wishlist" style="font-size: 22px;">
+        <i class="fa-regular fa-heart"></i>
+      </a>
+
+      <a routerLink="/account" class="text-white" aria-label="Cuenta" title="Cuenta" style="font-size: 22px;">
+        <i class="fa-regular fa-user"></i>
+      </a>
+
+      <a routerLink="/cart" class="text-white position-relative" aria-label="Carrito de compras" title="Carrito" style="font-size: 22px;">
+        <i class="fa-solid fa-bag-shopping"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          {{ counter() }}
+        </span>
+      </a>
+    </div>
+
+  </div>
+</nav>

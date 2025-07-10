@@ -1,0 +1,52 @@
+<div class="container my-4">
+    <h2 class="mb-4 text-center">Carrito de Compras</h2>
+    @if(datosCompra.length === 0) {
+    <div class="alert alert-info text-center">
+        No hay productos en el carrito.
+    </div>
+    } @else {
+    <div class="table-responsive">
+        <table class="table table-bordered align-middle text-center shadow-sm">
+            <thead class="table-dark">
+                <tr>
+                    <th>Imagen</th>
+                    <th>Producto</th>
+                    <th>Precio Unitario</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                @for (product of datosCompra; track product.id_product) {
+                <tr>
+                    <td>
+                        <img [src]="product.image" [alt]="product.name" class="img-thumbnail"
+                            style="width: 80px; height: 80px; object-fit: cover;">
+                    </td>
+                    <td>{{ product.name }}</td>
+                    <td>${{ product.price.toFixed(2) }}</td>
+                    <td>{{ contarProducto(product.id_product) }}</td>
+                    <td>${{ (contarProducto(product.id_product) * product.price).toFixed(2) }}</td>
+                    <td>
+                        <div class="d-flex justify-content-center gap-1">
+                            <button class="btn btn-outline-danger btn-sm"
+                                (click)="quitarUno(product.id_product)">-</button>
+                            <button class="btn btn-outline-success btn-sm"
+                                (click)="agregarUno(product.id_product)">+</button>
+                            <button class="btn btn-outline-secondary btn-sm"
+                                (click)="eliminarProducto(product.id_product)">Eliminar</button>
+                        </div>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+
+        <div class="text-end mt-3">
+            <h4>Total a pagar: <span class="text-success">${{ calcularTotal().toFixed(2) }}</span></h4>
+            <a class="btn btn-primary mt-2" routerLink="/verificate">Finalizar compra</a>
+        </div>
+    </div>
+    }
+</div>

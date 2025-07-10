@@ -1,0 +1,44 @@
+/* landing.component.css */
+
+/* Color para el título principal */
+h1 {
+  color: burlywood;
+  margin-bottom: 1rem;
+}
+
+/* Estilo para los íconos de beneficios */
+.fas {
+  margin-bottom: 1rem;
+}
+
+/* Espaciado entre las secciones */
+.container {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+/* Texto del botón CTA */
+.btn-primary {
+  background-color: burlywood;
+  border-color: burlywood;
+}
+
+.btn-primary:hover {
+  background-color: #cba15a;
+  border-color: #cba15a;
+}
+
+/* Texto para el número de contacto */
+.contact-number {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: burlywood;
+  margin-top: 0.5rem;
+}
+
+/* Asegura que el botón flotante se muestre en pantallas pequeñas */
+@media (max-width: 767.98px) {
+  button.position-fixed.d-inline-block.d-md-none {
+    display: block !important;
+  }
+}

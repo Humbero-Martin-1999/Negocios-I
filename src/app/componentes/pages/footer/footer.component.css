@@ -1,0 +1,94 @@
+/* Footer general */
+footer {
+  background-color: #121212;
+  color: #E0E0E0;
+  font-family: 'Montserrat', sans-serif;
+  padding-top: 40px;
+}
+
+footer a {
+  color: #BBBBBB;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+footer a:hover,
+footer a:focus {
+  color: #FFFFFF;
+  text-decoration: underline;
+}
+
+footer h5,
+footer h6 {
+  font-weight: 700;
+  color: #CCCCCC;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Logo y texto del footer */
+footer .col-lg-3 img {
+  max-width: 80px;
+  margin-bottom: 10px;
+}
+
+/* Redes sociales y tarjetas */
+footer .fab {
+  transition: color 0.3s ease;
+  cursor: pointer;
+  color: #BBBBBB;
+}
+
+footer .fab:hover,
+footer .fab:focus {
+  color: #FFFFFF;
+}
+
+/* Tamaños de iconos */
+footer .fab.fa-facebook,
+footer .fab.fa-instagram,
+footer .fab.fa-twitter,
+footer .fab.fa-youtube {
+  font-size: 1.8rem;
+}
+
+footer .fab.fa-cc-visa,
+footer .fab.fa-cc-mastercard,
+footer .fab.fa-cc-amex,
+footer .fab.fa-cc-paypal,
+footer .fab.fa-cc-discover {
+  font-size: 2.2rem;
+}
+
+/* Espaciado entre iconos */
+footer .d-flex.gap-3 > * {
+  margin-right: 12px;
+}
+
+/* Contacto */
+footer p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+/* Footer derechos reservados */
+footer > div.text-center.bg-secondary {
+  background-color: #1c1a1b;
+  color: #BBBBBB;
+  font-size: 0.9rem;
+  padding: 12px 0;
+  margin-top: 40px;
+}
+
+/* Responsive para móviles */
+@media (max-width: 768px) {
+  footer .col-lg-3,
+  footer .col-md-6 {
+    margin-bottom: 30px;
+    text-align: center;
+  }
+  footer .d-flex.justify-content-center {
+    justify-content: center !important;
+  }
+}

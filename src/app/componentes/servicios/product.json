@@ -1,0 +1,18 @@
+[
+    { "id_product": 1, "name": "Playera Licra Negra", "description": "Una comoda playera de licra con tenologia de punta para entrenar", "price": 479.99 , "image":"/img/products/1.png"},
+    { "id_product": 2, "name": "Playera Licra Roja", "description": "Playera ajustada color rojo ideal para entrenamientos intensos.", "price": 489.99, "image":"/img/products/2.avif"},
+    { "id_product": 3, "name": "Playera Licra Verde", "description": "Playera deportiva verde con tela transpirable y flexible.", "price": 489.99, "image":"/img/products/3.jfif"},
+    { "id_product": 4, "name": "Playera Licra Morada", "description": "Comodidad y estilo en una playera morada para entrenar.", "price": 489.99, "image":"/img/products/4.jfif"},
+    { "id_product": 5, "name": "Playera Licra Azul", "description": "Licra azul suave al tacto con excelente resistencia al sudor.", "price": 489.99, "image":"/img/products/Playera Licra Azul.jpg"},
+    { "id_product": 6, "name": "Short Negro", "description": "Short deportivo negro con ajuste ergonómico y bolsillos laterales.", "price": 359.99, "image":"/img/products/Short Negro.webp"},
+    { "id_product": 7, "name": "Short Rojo", "description": "Short rojo con tela ligera para máxima movilidad.", "price": 359.99, "image":"/img/products/Short Rojo.webp"},
+    { "id_product": 8, "name": "Short Verde", "description": "Short verde perfecto para entrenamientos al aire libre.", "price": 359.99, "image":"/img/products/Short Verde.webp"},
+    { "id_product": 9, "name": "Short Morado", "description": "Diseño único en short morado con ajuste en cintura.", "price": 359.99, "image":"/img/products/Short Morado.jpg"},
+    { "id_product": 10, "name": "Short Azul", "description": "Short azul con tecnología dry-fit para mayor frescura.", "price": 359.99, "image":"/img/products/Short Azul.jpg"},
+    { "id_product": 12, "name": "Playera de tirantes Negra", "description": "Playera de tirantes negra para máxima ventilación en rutinas intensas.", "price": 299.99, "image":"/img/products/Playera de tirantes Negra.webp"},
+    { "id_product": 13, "name": "Playera de tirantes Roja", "description": "Estilo y frescura con esta playera de tirantes roja.", "price": 299.99, "image":"/img/products/Playera de tirantes Roja.jpg"},
+    { "id_product": 14, "name": "Playera de tirantes Verde", "description": "Tirantes verdes con diseño deportivo para alto rendimiento.", "price": 299.99, "image":"/img/products/Playera de tirantes Verde.jpg"},
+    { "id_product": 15, "name": "Playera de tirantes Morada", "description": "Playera sin mangas morada, perfecta para clima cálido.", "price": 299.99, "image":"/img/products/Playera de tirantes Morada.jpg"},
+    { "id_product": 16, "name": "Playera de tirantes Azul", "description": "Tirantes azules con tela ultra ligera y cómoda.", "price": 299.99, "image":"/img/products/Playera de tirantes Azul.jpg"}
+  ]
+  

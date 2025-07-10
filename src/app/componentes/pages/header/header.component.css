@@ -1,0 +1,101 @@
+/* Espacio entre items del nav central */
+.navbar-nav .nav-item {
+  margin-right: 30px;
+}
+
+/* Ajuste del span del contador en carrito */
+span {
+  font-size: 14px;
+  padding-left: 5px;
+  font-weight: 700;
+}
+
+/* Alineación general navbar */
+.navbar .container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Centro: barra de Mujer, Hombre, Suplementos */
+.navbar-nav.mx-auto {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Links del centro */
+.navbar-nav.mx-auto .nav-link {
+  color: #ddd;
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+.navbar-nav.mx-auto .nav-link:hover {
+  color: #deb887; /* burlywood */
+  text-decoration: underline;
+}
+
+/* Iconos derecha */
+.d-flex.align-items-center.gap-3 a {
+  color: #ddd;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.d-flex.align-items-center.gap-3 a:hover {
+  color: #deb887;
+}
+
+/* Badge contador carrito */
+.d-flex.align-items-center.gap-3 a .badge {
+  font-size: 12px;
+  font-weight: 700;
+  padding: 3px 6px;
+}
+
+/* Input buscador */
+form.d-flex input.form-control {
+  border-radius: 20px;
+  padding-left: 15px;
+  background-color: #2a2a2a;
+  border: none;
+  color: #eee;
+  transition: background-color 0.3s ease;
+}
+
+form.d-flex input.form-control::placeholder {
+  color: #888;
+}
+
+form.d-flex input.form-control:focus {
+  background-color: #444;
+  outline: none;
+}
+
+/* Botón del buscador */
+form.d-flex button.btn {
+  border-radius: 20px;
+  border: none;
+  background-color: #deb887;
+  color: #121212;
+  padding: 6px 12px;
+  margin-left: 8px;
+  transition: background-color 0.3s ease;
+}
+
+form.d-flex button.btn:hover {
+  background-color: #c4a97d;
+  color: #fff;
+}
+
+/* Responsive: en pantallas pequeñas el nav central desaparece y los iconos se ajustan */
+@media (max-width: 768px) {
+  .navbar-nav.mx-auto {
+    display: none;
+  }
+  form.d-flex input.form-control {
+    width: 120px;
+  }
+}

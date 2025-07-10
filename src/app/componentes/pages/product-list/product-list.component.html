@@ -1,0 +1,47 @@
+<div class="container my-4">
+    <div class="row g-4">
+        @for(item of productosList; track $index) {
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3">
+            <div class="card h-100 text-center shadow-sm">
+                <img [src]="item.image" [alt]="item.name" class="card-img-top"
+                    style="height: 250px; object-fit: cover;" />
+                <div class="card-body d-flex flex-column justify-content-between">
+                    <h5 class="card-title">{{ item.name }}</h5>
+                    <p class="card-text">{{ item.description }}</p>
+                    <h6 class="card-text">${{ item.price }} MXN</h6>
+                    <div class="mt-3">
+                        <button class="btn btn-success btn-sm"
+                            style="background-color: rgb(222, 184, 135); border: solid rgb(222, 184, 135);" (click)="openComprarModal(item)">Comprar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+    @if(productosList.length == 0) {
+    <div class="text-center mt-5">
+        <p class="fs-4 text-muted">No se encontraron resultados con la búsqueda</p>
+    </div>
+    }
+</div>
+
+<div class="modal fade" id="comprarModal" tabindex="-1" aria-labelledby="comprarModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="comprarModalLabel">Agregar al carrito</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+            </div>
+            <div class="modal-body">
+                <p>{{ productoSeleccionado?.name }}</p>
+                <label for="cantidad" class="form-label">Cantidad:</label>
+                <input type="number" id="cantidad" [(ngModel)]="cantidadSeleccionada" class="form-control" min="1" />
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                <button type="button" class="btn btn-primary" (click)="confirmarCompra()">Agregar</button>
+            </div>
+        </div>
+    </div>
+</div>

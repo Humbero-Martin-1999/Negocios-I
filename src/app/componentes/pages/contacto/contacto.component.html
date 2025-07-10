@@ -1,0 +1,46 @@
+<form [formGroup]="contactoForm" (ngSubmit)="enviar()" novalidate>
+
+  <label for="nombre">Nombre completo:</label>
+  <input id="nombre" type="text" formControlName="nombre" />
+  <div class="error" *ngIf="f['nombre'].touched && f['nombre'].invalid">
+    <small *ngIf="f['nombre'].errors?.['required']">El nombre es obligatorio.</small>
+    <small *ngIf="f['nombre'].errors?.['minlength']">Mínimo 3 caracteres.</small>
+  </div>
+
+  <label for="email">Correo electrónico:</label>
+  <input id="email" type="email" formControlName="email" />
+  <div class="error" *ngIf="f['email'].touched && f['email'].invalid">
+    <small *ngIf="f['email'].errors?.['required']">El correo es obligatorio.</small>
+    <small *ngIf="f['email'].errors?.['email']">Correo no válido.</small>
+  </div>
+
+  <label for="telefono">Teléfono:</label>
+  <input id="telefono" type="tel" formControlName="telefono" />
+  <div class="error" *ngIf="f['telefono'].touched && f['telefono'].invalid">
+    <small *ngIf="f['telefono'].errors?.['required']">El teléfono es obligatorio.</small>
+    <small *ngIf="f['telefono'].errors?.['pattern']">Solo números, entre 10 y 15 dígitos.</small>
+  </div>
+
+  <label for="asunto">Asunto:</label>
+  <input id="asunto" type="text" formControlName="asunto" />
+  <div class="error" *ngIf="f['asunto'].touched && f['asunto'].invalid">
+    <small>El asunto es obligatorio.</small>
+  </div>
+
+  <label for="mensaje">Mensaje:</label>
+  <textarea id="mensaje" rows="5" formControlName="mensaje"></textarea>
+  <div class="error" *ngIf="f['mensaje'].touched && f['mensaje'].invalid">
+    <small *ngIf="f['mensaje'].errors?.['required']">El mensaje es obligatorio.</small>
+    <small *ngIf="f['mensaje'].errors?.['minlength']">Mínimo 10 caracteres.</small>
+  </div>
+
+  <label class="checkbox-label">
+    <input type="checkbox" formControlName="aceptarTerminos" />
+    Acepto los términos y condiciones
+  </label>
+  <div class="error" *ngIf="f['aceptarTerminos'].touched && f['aceptarTerminos'].invalid">
+    <small>Debes aceptar los términos para continuar.</small>
+  </div>
+
+  <button type="submit" [disabled]="contactoForm.invalid">Enviar</button>
+</form>

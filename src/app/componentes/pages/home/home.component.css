@@ -1,0 +1,273 @@
+/* Fuentes y reset */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #121212; /* negro oscuro */
+  color: #E0E0E0; /* gris claro */
+}
+
+/* Hero principal */
+#home-hero {
+  background: url('https://res.cloudinary.com/ggus-dev/image/private/s--5ufyPPCl--/c_auto,g_auto,w_1920,h_960/v1/2405e908/default-hero.jpg.webp?_a=BAAAV6Bs') no-repeat center center/cover;
+  height: 60vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero-content h1 {
+  font-size: 4.5rem;
+  letter-spacing: 0.3em;
+  margin: 0;
+  text-shadow: 0 0 10px rgba(224, 224, 224, 0.6);
+  color: #FFFFFF;
+}
+
+.hero-content p {
+  font-size: 1.5rem;
+  margin: 15px 0 30px;
+  font-weight: 500;
+  text-shadow: 0 0 8px rgba(0,0,0,0.8);
+  color: #CCCCCC;
+}
+
+.btn-hero {
+  background-color: #BBBBBB;
+  color: #121212;
+  padding: 14px 40px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  border-radius: 30px;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 4px 12px rgba(187,187,187,0.7);
+}
+
+.btn-hero:hover {
+  background-color: #999999;
+  box-shadow: 0 6px 20px rgba(153,153,153,0.9);
+}
+
+/* Sección productos */
+.productos-section {
+  max-width: 1200px;
+  margin: 50px auto 80px;
+  padding: 0 20px;
+}
+
+.productos-section h2 {
+  color: #CCCCCC;
+  font-weight: 700;
+  font-size: 2.8rem;
+  margin-bottom: 30px;
+  letter-spacing: 0.1em;
+  text-align: center;
+}
+
+/* Contenedor horizontal scroll */
+.productos-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.productos-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.productos-grid::-webkit-scrollbar-thumb {
+  background: #BBBBBB;
+  border-radius: 10px;
+}
+
+.productos-grid::-webkit-scrollbar-track {
+  background: #1c1a1b;
+}
+
+/* Tarjetas categoría */
+.categoria-card {
+  background-color: #1c1a1b;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(187, 187, 187, 0.3);
+  padding: 0;
+  text-align: center;
+  color: #CCCCCC;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  user-select: none;
+  overflow: hidden;
+  min-width: 280px;
+}
+
+.categoria-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 20px rgba(187, 187, 187, 0.6);
+}
+
+.categoria-card img {
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  object-fit: cover;
+  aspect-ratio: 1 / 1;
+}
+
+.categoria-card h3 {
+  font-weight: 900;
+  font-size: 1.4rem;
+  margin: 15px 0;
+  padding: 0 10px;
+  color: #E0E0E0;
+}
+
+/* Sección suplementos */
+.suplementos-section {
+  max-width: 1200px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+.suplementos-section h2 {
+  font-size: 2.8rem;
+  color: #CCCCCC;
+  margin-bottom: 15px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.suplementos-sub {
+  font-size: 1.2rem;
+  color: #AFAFAF;
+  margin-bottom: 40px;
+}
+
+.suplementos-grid {
+  display: flex;
+  gap: 25px;
+  overflow-x: auto;
+  padding-bottom: 10px;
+  -webkit-overflow-scrolling: touch;
+}
+
+.suplementos-grid::-webkit-scrollbar {
+  height: 8px;
+}
+
+.suplementos-grid::-webkit-scrollbar-thumb {
+  background: #BBBBBB;
+  border-radius: 10px;
+}
+
+.suplementos-grid::-webkit-scrollbar-track {
+  background: #1c1a1b;
+}
+
+.suplemento-card {
+  background-color: #1c1a1b;
+  border-radius: 15px;
+  box-shadow: 0 0 15px rgba(187, 187, 187, 0.2);
+  overflow: hidden;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.suplemento-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 25px rgba(187, 187, 187, 0.4);
+}
+
+.suplemento-card img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-bottom: 2px solid #BBBBBB;
+}
+
+.suplemento-card h3 {
+  color: #CCCCCC;
+  font-size: 1.4rem;
+  margin: 15px 0 5px;
+}
+
+.suplemento-card p {
+  padding: 0 15px 20px;
+  font-size: 1rem;
+  color: #AFAFAF;
+}
+
+/* Sección informativa moderna */
+.info-gym-gallery {
+  background-color: rgba(28, 26, 27, 0.9);
+  padding: 60px 30px;
+  margin: 80px auto;
+  max-width: 1000px;
+  border-radius: 20px;
+  box-shadow: 0 0 25px rgba(187, 187, 187, 0.1);
+}
+
+.info-container {
+  text-align: center;
+  color: #E0E0E0;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.info-gym-gallery h2 {
+  font-size: 2.8rem;
+  color: #CCCCCC;
+  font-weight: 800;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.yellow-bar {
+  width: 70px;
+  height: 5px;
+  background-color: #BBBBBB;
+  margin: 0 auto 30px;
+  border-radius: 10px;
+}
+
+.info-gym-gallery p {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  margin-bottom: 20px;
+  color: #AFAFAF;
+}
+
+.info-gym-gallery p strong {
+  color: #FFFFFF;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .info-gym-gallery {
+    padding: 40px 20px;
+  }
+
+  .info-gym-gallery h2 {
+    font-size: 2rem;
+  }
+
+  .info-gym-gallery p {
+    font-size: 1rem;
+  }
+
+  .suplementos-grid {
+    flex-direction: column;
+    align-items: center;
+  }
+}
