@@ -17,8 +17,8 @@ export class ProductService {
 
   searchProduct(term: string): Product[] {
     const filteredProduct = this.products.filter(
-      (product) =>
-        product.name.toLowerCase().includes(term.toLowerCase())
+      (product) =>+
+              product.name.toLowerCase().includes(term.toLowerCase())
     );
     this.searchResults = filteredProduct;
     return this.searchResults;

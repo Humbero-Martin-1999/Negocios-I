@@ -1,0 +1,79 @@
+/* Contenedor principal */
+.terminos-container {
+  max-width: 960px;
+  margin: 60px auto;
+  padding: 40px;
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', 'Helvetica Neue', sans-serif;
+  color: #1c1c1c;
+  line-height: 1.7;
+}
+
+/* Título principal */
+.terminos-container h1 {
+  color: #111;
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 40px;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 10px;
+}
+
+/* Subtítulos de cada sección */
+.terminos-container h2 {
+  color: #333;
+  font-size: 1.5rem;
+  margin-top: 35px;
+  margin-bottom: 15px;
+  border-left: 5px solid #555;
+  padding-left: 10px;
+}
+
+/* Texto normal y listas */
+.terminos-container p,
+.terminos-container ul {
+  font-size: 1.05rem;
+  margin-bottom: 20px;
+}
+
+/* Listas */
+.terminos-container ul {
+  padding-left: 25px;
+}
+
+.terminos-container ul li {
+  list-style-type: disc;
+  margin-bottom: 8px;
+}
+
+/* Enlaces (correo) */
+.terminos-container a {
+  color: #000;
+  text-decoration: underline;
+  font-weight: 500;
+}
+
+/* Pie de página */
+.terminos-container .fecha-actualizacion {
+  text-align: right;
+  font-size: 0.9rem;
+  color: #777;
+  margin-top: 40px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .terminos-container {
+    padding: 20px;
+  }
+
+  .terminos-container h1 {
+    font-size: 2rem;
+  }
+
+  .terminos-container h2 {
+    font-size: 1.3rem;
+  }
+}

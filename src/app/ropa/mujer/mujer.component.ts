@@ -11,15 +11,15 @@ import { RouterModule } from '@angular/router'; // 👈 necesario para routerLin
 })
 export class MujerComponent {
   secciones = [
-    { nombre: 'Leggings', ruta: '/ropa/mujer/leggings', img: 'Legging 1.jpg' },
-    { nombre: 'Shorts', ruta: '/ropa/mujer/shorts', img: 'Short 1.jpeg' },
-    { nombre: 'Bra Deportivo', ruta: '/ropa/mujer/bra-deportivo', img: 'Bra 1.jpeg' },
-    { nombre: 'Chamarras Deportivas', ruta: '/ropa/mujer/chamarras', img: 'Chamarra 1.jpeg' }
+    { nombre: 'Leggings', ruta: '/ropa/mujer/leggings', img: 'LG2.jpg' },
+    { nombre: 'Shorts', ruta: '/ropa/mujer/shorts', img: 'SH2.jpg' },
+    { nombre: 'Bra Deportivo', ruta: '/ropa/mujer/bra-deportivo', img: 'BR2.jpg' },
+    { nombre: 'Chamarras Deportivas', ruta: '/ropa/mujer/chamarras', img: 'CH1.jpg' }
   ];
 
   masVendidos = [
-    { nombre: 'Legging Nike PRO', precio: 1499, img: 'Legging 1.jpg' },
-    { nombre: 'Bra Deportivo Adidas', precio: 899, img: 'Bra 1.jpeg' },
-    { nombre: 'Short Under Armour', precio: 699, img: 'Short 1.jpeg' }
+    { nombre: 'Legging Aurola Negro', precio: 1499, img: 'LG1.jpg' },
+    { nombre: 'Bra Deportivo Aurola Azul Marino', precio: 899, img: 'BR1.jpg' },
+    { nombre: 'Short Tom Tiger Azul Claro', precio: 799, img: 'SH1.jpg' }
   ];
 }
