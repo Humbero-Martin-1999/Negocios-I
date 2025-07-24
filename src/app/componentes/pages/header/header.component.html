@@ -15,12 +15,21 @@
       <li class="nav-item">
         <a routerLink="/ropa/hombre" routerLinkActive="active" class="nav-link">Hombre</a>
       </li>
-      <li class="nav-item">
-        <a routerLink="/suplementos" routerLinkActive="active" class="nav-link">Suplementos</a>
+      <!-- Dropdown Suplementos -->
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="suplementosDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Suplementos
+        </a>
+        <ul class="dropdown-menu" aria-labelledby="suplementosDropdown">
+          <li><a class="dropdown-item" routerLink="/suplementos/gimnasio">Gimnasio</a></li>
+          <li><a class="dropdown-item" routerLink="/suplementos/running">Running</a></li>
+          <li><a class="dropdown-item" routerLink="/suplementos/crossfit">Crossfit</a></li>
+          <li><a class="dropdown-item" routerLink="/suplementos/yoga_y_bienestar">Yoga y Bienestar</a></li>
+        </ul>
       </li>
     </ul>
 
-    <!-- Derecha: Buscador + Iconos -->
+    <!-- Derecha: Buscador + Carrito -->
     <div class="d-flex align-items-center gap-3" *ngIf="!isLandingPage">
       <form (submit)="onSearch($event)" class="d-flex" role="search" aria-label="Buscar productos">
         <input
@@ -36,14 +45,6 @@
           <i class="fa fa-search"></i>
         </button>
       </form>
-
-      <a routerLink="/wishlist" class="text-white" aria-label="Wishlist" title="Wishlist" style="font-size: 22px;">
-        <i class="fa-regular fa-heart"></i>
-      </a>
-
-      <a routerLink="/account" class="text-white" aria-label="Cuenta" title="Cuenta" style="font-size: 22px;">
-        <i class="fa-regular fa-user"></i>
-      </a>
 
       <a routerLink="/cart" class="text-white position-relative" aria-label="Carrito de compras" title="Carrito" style="font-size: 22px;">
         <i class="fa-solid fa-bag-shopping"></i>

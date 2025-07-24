@@ -1,0 +1,52 @@
+h2 {
+  text-align: center;
+  color: #ccc;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.productos-grid {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.producto-card {
+  background-color: #ffffff;
+  border-radius: 10px;
+  padding: 15px;
+  width: 180px;
+  text-align: center;
+  box-shadow: 0 0 10px rgba(187, 187, 187, 0.2);
+  transition: transform 0.3s ease;
+  cursor: pointer;
+  border: solid black 1px;
+}
+
+.producto-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px rgba(187, 187, 187, 0.4);
+}
+
+.producto-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+button {
+  background-color: #1c1a1b;
+  color: #ccc;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #444242;
+}

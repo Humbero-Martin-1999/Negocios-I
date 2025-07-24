@@ -1,0 +1,10 @@
+<h2>Suplementos para Crossfit</h2>
+
+<div class="productos-grid">
+  <div *ngFor="let suplemento of suplementos" class="producto-card">
+    <img [src]="suplemento.img" [alt]="suplemento.nombre" />
+    <h3>{{ suplemento.nombre }}</h3>
+    <p>Precio: ${{ suplemento.precio }}</p>
+    <button (click)="agregarAlCarrito(suplemento)">Agregar al carrito</button>
+  </div>
+</div>

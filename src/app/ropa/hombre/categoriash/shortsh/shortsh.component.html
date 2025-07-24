@@ -1,0 +1,9 @@
+<h2>Shorts para Hombre</h2>
+<div class="productos-grid">
+  <div *ngFor="let producto of productos" class="producto-card">
+    <img [src]="producto.image" [alt]="producto.name" />
+    <h3>{{ producto.name }}</h3>
+    <p>Precio: ${{ producto.price }}</p>
+    <button (click)="agregarAlCarrito(producto)">Agregar al carrito</button>
+  </div>
+</div>

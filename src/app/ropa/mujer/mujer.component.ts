@@ -14,7 +14,7 @@ export class MujerComponent {
     { nombre: 'Leggings', ruta: '/ropa/mujer/leggings', img: 'LG2.jpg' },
     { nombre: 'Shorts', ruta: '/ropa/mujer/shorts', img: 'SH2.jpg' },
     { nombre: 'Bra Deportivo', ruta: '/ropa/mujer/bra-deportivo', img: 'BR2.jpg' },
-    { nombre: 'Chamarras Deportivas', ruta: '/ropa/mujer/chamarras', img: 'CH1.jpg' }
+    { nombre: 'Chamarras Deportivas', ruta: '/ropa/mujer/chamarras-deportivas-mujer', img: 'CH1.jpg' }
   ];
 
   masVendidos = [
