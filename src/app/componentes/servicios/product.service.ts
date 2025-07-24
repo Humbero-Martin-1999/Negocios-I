@@ -1,5 +1,7 @@
 import { Injectable, signal } from '@angular/core';
 import { Product } from '../models/product';
+import { FormsModule } from '@angular/forms';
+
 
 @Injectable({
   providedIn: 'root'
@@ -123,9 +125,29 @@ export class ProductService {
 
   ];
 
+  // Métodos CRUD
+  addProduct(product: Product) {
+    // Generar nuevo ID (podría mejorarse)
+    const newId = Math.max(...this.products.map(p => p.id_product)) + 1;
+    this.products.push({ ...product, id_product: newId });
+  }
+
+  updateProduct(updatedProduct: Product) {
+    const index = this.products.findIndex(p => p.id_product === updatedProduct.id_product);
+    if (index !== -1) {
+      this.products[index] = updatedProduct;
+    }
+  }
+
+  deleteProduct(id: number) {
+    this.products = this.products.filter(p => p.id_product !== id);
+  }
+
   private searchResults = this.products;
 
   constructor() {}
+
+
 
   getProducts(): Product[] {
     return this.products;

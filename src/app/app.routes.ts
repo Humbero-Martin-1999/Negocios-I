@@ -20,6 +20,12 @@ import { ContactoComponent } from './componentes/pages/contacto/contacto.compone
 
 import { AvisoDePrivacidadComponent } from './componentes/pages/aviso/avisodeprivacidad.component';
 import { TerminosYCondicionesComponent } from './componentes/pages/terminos/terminosycondiciones.component';
+ 
+//
+// Importa los componentes de la página de administración
+import { LoginComponent } from './components/login/login.component';
+import { AdminComponent } from './components/admin/admin.component';
+import { AdminGuard } from './guards/admin.guard';
 
 // Importa los componentes de suplementos
 import { GimnasioComponent } from './suplementos/gimnasio/gimnasio.component';
@@ -28,7 +34,9 @@ import { CrossfitComponent } from './suplementos/crossfit/crossfit.component';
 import { YogaBienestarComponent } from './suplementos/yoga-bienestar/yoga-bienestar.component';
 
 export const routes: Routes = [
-  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: '', redirectTo: '/login', pathMatch: 'full' },
+  {path: 'login', component: LoginComponent, title: 'Login'},
+  {path: 'admin', component: AdminComponent, title: 'Administración', canActivate: [AdminGuard]},
   { path: 'home', component: HomeComponent, title: 'Home' },
   { path: 'landing', component: LandingComponent, title: 'Landing' },
   { path: 'ropa', component: ProductListComponent, title: 'Ropa' },
@@ -53,5 +61,10 @@ export const routes: Routes = [
   { path: 'suplementos/gimnasio', component: GimnasioComponent, title: 'Suplementos Gimnasio' },
   { path: 'suplementos/running', component: RunningComponent, title: 'Suplementos Running' },
   { path: 'suplementos/crossfit', component: CrossfitComponent, title: 'Suplementos Crossfit' },
-  { path: 'suplementos/yoga-bienestar', component: YogaBienestarComponent, title: 'Suplementos Yoga y Bienestar' }
+  { path: 'suplementos/yoga-bienestar', component: YogaBienestarComponent, title: 'Suplementos Yoga y Bienestar' },
+
+  // Rutas de administración
+  { path: 'login', component: LoginComponent, title: 'Login' },
+  { path: 'admin', component: AdminComponent, title: 'Administración',canActivate: [AdminGuard]}
 ];
+

@@ -37,4 +37,8 @@ export class HeaderComponent {
       this.router.navigate(['/search'], { queryParams: { q: query } });
     }
   }
+  goToLogin() {
+    this.router.navigate(['/login']);
+  }
 }
+
