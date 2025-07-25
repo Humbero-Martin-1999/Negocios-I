@@ -1,0 +1,60 @@
+<!-- admin.component.html -->
+<div class="admin-container">
+  <h2>Administración de Productos</h2>
+  <button class="logout-btn" (click)="logout()">Cerrar Sesión</button>
+
+  <div class="form-section">
+    <h3>{{ selectedProduct ? 'Editar Producto' : 'Agregar Nuevo Producto' }}</h3>
+    <form (submit)="selectedProduct ? updateProduct() : addProduct()">
+      <div class="form-group">
+        <label>Nombre:</label>
+        <input type="text" [(ngModel)]="currentProduct.name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Precio:</label>
+        <input type="number" [(ngModel)]="currentProduct.price" name="price" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Imagen (nombre archivo):</label>
+        <input type="text" [(ngModel)]="currentProduct.image" name="image" required>
+      </div>
+      
+      <div class="form-group">
+        <label>Descripción:</label>
+        <textarea [(ngModel)]="currentProduct.description" name="description"></textarea>
+      </div>
+      
+      <button type="submit">{{ selectedProduct ? 'Actualizar' : 'Agregar' }}</button>
+      <button type="button" *ngIf="selectedProduct" (click)="selectedProduct = null">Cancelar</button>
+    </form>
+  </div>
+
+  <div class="product-list">
+    <h3>Lista de Productos</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Precio</th>
+          <th>Imagen</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{ product.id_product }}</td>
+          <td>{{ product.name }}</td>
+          <td>{{ product.price | currency }}</td>
+          <td>{{ product.image }}</td>
+          <td>
+            <button (click)="editProduct(product)">Editar</button>
+            <button (click)="deleteProduct(product.id_product)">Eliminar</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

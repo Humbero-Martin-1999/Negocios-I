@@ -90,6 +90,26 @@ form.d-flex button.btn:hover {
   color: #fff;
 }
 
+.login-btn {
+  background-color: #4CAF50; /* Verde */
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s;
+  margin-left: 10px;
+}
+
+.login-btn:hover {
+  background-color: #45a049;
+}
+
+.login-btn i {
+  margin-right: 5px;
+}
+
 /* Responsive: en pantallas pequeñas el nav central desaparece y los iconos se ajustan */
 @media (max-width: 768px) {
   .navbar-nav.mx-auto {
