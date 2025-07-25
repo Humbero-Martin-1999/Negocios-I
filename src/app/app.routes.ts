@@ -20,7 +20,7 @@ import { ContactoComponent } from './componentes/pages/contacto/contacto.compone
 
 import { AvisoDePrivacidadComponent } from './componentes/pages/aviso/avisodeprivacidad.component';
 import { TerminosYCondicionesComponent } from './componentes/pages/terminos/terminosycondiciones.component';
- 
+import { RegisterComponent } from './components/register/register.component';
 //
 // Importa los componentes de la página de administración
 import { LoginComponent } from './components/login/login.component';
@@ -37,6 +37,7 @@ export const routes: Routes = [
   { path: '', redirectTo: '/login', pathMatch: 'full' },
   {path: 'login', component: LoginComponent, title: 'Login'},
   {path: 'admin', component: AdminComponent, title: 'Administración', canActivate: [AdminGuard]},
+  { path: 'register', component: RegisterComponent, title: 'Registro' },
   { path: 'home', component: HomeComponent, title: 'Home' },
   { path: 'landing', component: LandingComponent, title: 'Landing' },
   { path: 'ropa', component: ProductListComponent, title: 'Ropa' },
@@ -63,8 +64,6 @@ export const routes: Routes = [
   { path: 'suplementos/crossfit', component: CrossfitComponent, title: 'Suplementos Crossfit' },
   { path: 'suplementos/yoga-bienestar', component: YogaBienestarComponent, title: 'Suplementos Yoga y Bienestar' },
 
-  // Rutas de administración
-  { path: 'login', component: LoginComponent, title: 'Login' },
-  { path: 'admin', component: AdminComponent, title: 'Administración',canActivate: [AdminGuard]}
+
 ];
 

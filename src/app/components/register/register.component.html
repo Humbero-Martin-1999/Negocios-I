@@ -1,0 +1,57 @@
+<div class="register-page">
+  <div class="register-card">
+    <div class="register-header">
+      <div class="logo-container">
+      </div>
+      <h1>Únete a Gym Gallery</h1>
+      <p class="subtitle">Crea tu cuenta en segundos</p>
+    </div>
+
+    <form class="register-form" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Nombre de usuario</label>
+        <div class="input-container">
+          <i class="fas fa-user icon"></i>
+          <input type="text" 
+                 id="username" 
+                 [(ngModel)]="username" 
+                 name="username" 
+                 placeholder="Ej: JuanPerez"
+                 required
+                 minlength="3"
+                 maxlength="20"
+                 class="form-input">
+          <i class="fas fa-check-circle check-icon" *ngIf="username.length >= 3"></i>
+        </div>
+        <small class="hint">Mínimo 3 caracteres, máximo 20</small>
+      </div>
+
+      <button type="submit" class="submit-btn">
+        <span class="btn-content">
+          <i class="fas fa-user-plus btn-icon"></i>
+          Crear mi cuenta
+        </span>
+      </button>
+
+      <div class="message-container">
+        <div *ngIf="error" class="error-message">
+          <i class="fas fa-exclamation-circle"></i>
+          <span>{{ error }}</span>
+        </div>
+        
+        <div *ngIf="success" class="success-message">
+          <i class="fas fa-check-circle"></i>
+          <span>{{ success }}</span>
+        </div>
+      </div>
+
+      <div class="divider">
+        <span>o</span>
+      </div>
+
+      <div class="login-link">
+        ¿Ya tienes cuenta? <a routerLink="/login" class="login-link-text">Inicia sesión</a>
+      </div>
+    </form>
+  </div>
+</div>
