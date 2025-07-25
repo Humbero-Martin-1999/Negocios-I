@@ -1,22 +1,29 @@
-// admin.component.ts
+// src/app/components/admin/admin.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CommonModule, CurrencyPipe } from '@angular/common';
+import { CommonModule, CurrencyPipe, DatePipe } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { ProductService } from '../../componentes/servicios/product.service';
+import { OrderService } from '../../services/order.service';
 import { Product } from '../../componentes/models/product';
+import { Order, OrderStatus, OrderStatusFilter } from '../../componentes/models/order';
 import { AuthService } from '../../services/auth.service';
-import { Router } from '@angular/router';
-import { NgFor, NgIf } from '@angular/common';
+import { Router, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-admin',
   standalone: true,
-  imports: [CommonModule,FormsModule, NgFor, NgIf],
-  providers: [CurrencyPipe],
+  imports: [
+    CommonModule,
+    FormsModule,
+    RouterModule,
+    CurrencyPipe,
+    DatePipe
+  ],
   templateUrl: './admin.component.html',
   styleUrls: ['./admin.component.css']
 })
 export class AdminComponent implements OnInit {
+  // Sección de Productos
   products: Product[] = [];
   selectedProduct: Product | null = null;
   newProduct: Product = {
@@ -27,25 +34,43 @@ export class AdminComponent implements OnInit {
     description: ''
   };
 
+  // Sección de Pedidos
+  orders: Order[] = [];
+  filteredOrders: Order[] = [];
+  selectedOrder: Order | null = null;
+  statusFilter: OrderStatusFilter = 'all';
+  activeTab: 'products' | 'orders' = 'products';
+
+  statusOptions: OrderStatusFilter[] = [
+    'all',
+    'pending',
+    'processing',
+    'shipped',
+    'delivered',
+    'cancelled'
+  ];
+
   constructor(
     private productService: ProductService,
+    private orderService: OrderService,
     private auth: AuthService,
     private router: Router
   ) {}
 
   ngOnInit() {
-    this.products = this.productService.getProducts();
+    this.loadProducts();
+    this.loadOrders();
   }
 
-  logout() {
-    this.auth.logout();
-    this.router.navigate(['/']);
+  // Métodos para Productos
+  loadProducts() {
+    this.products = this.productService.getProducts();
   }
 
   addProduct() {
     this.productService.addProduct(this.newProduct);
-    this.products = this.productService.getProducts();
-    this.resetForm();
+    this.loadProducts();
+    this.resetProductForm();
   }
 
   editProduct(product: Product) {
@@ -55,7 +80,7 @@ export class AdminComponent implements OnInit {
   updateProduct() {
     if (this.selectedProduct) {
       this.productService.updateProduct(this.selectedProduct);
-      this.products = this.productService.getProducts();
+      this.loadProducts();
       this.selectedProduct = null;
     }
   }
@@ -63,14 +88,14 @@ export class AdminComponent implements OnInit {
   deleteProduct(id: number) {
     if (confirm('¿Estás seguro de eliminar este producto?')) {
       this.productService.deleteProduct(id);
-      this.products = this.productService.getProducts();
-      if (this.selectedProduct && this.selectedProduct.id_product === id) {
+      this.loadProducts();
+      if (this.selectedProduct?.id_product === id) {
         this.selectedProduct = null;
       }
     }
   }
 
-  resetForm() {
+  resetProductForm() {
     this.newProduct = {
       id_product: 0,
       name: '',
@@ -78,6 +103,49 @@ export class AdminComponent implements OnInit {
       image: '',
       description: ''
     };
+  }
+
+  // Métodos para Pedidos
+  loadOrders() {
+    this.orders = this.orderService.getAllOrders();
+    this.applyOrderFilter();
+  }
+
+  applyOrderFilter() {
+    if (this.statusFilter === 'all') {
+      this.filteredOrders = [...this.orders];
+    } else {
+      this.filteredOrders = this.orders.filter(order => order.status === this.statusFilter);
+    }
+  }
+
+  viewOrderDetails(order: Order) {
+    this.selectedOrder = order;
+  }
+
+  updateOrderStatus(order: Order, newStatus: OrderStatus) {
+    this.orderService.updateOrderStatus(order.id, newStatus);
+    this.loadOrders();
+    if (this.selectedOrder?.id === order.id) {
+      this.selectedOrder.status = newStatus;
+    }
+  }
+
+  updateTrackingNumber(order: Order) {
+    if (this.selectedOrder && this.selectedOrder.trackingNumber) {
+      this.orderService.updateTrackingNumber(order.id, this.selectedOrder.trackingNumber);
+      this.loadOrders();
+    }
+  }
+
+  // Métodos generales
+  switchTab(tab: 'products' | 'orders') {
+    this.activeTab = tab;
+  }
+
+  logout() {
+    this.auth.logout();
+    this.router.navigate(['/']);
   }
 
   get currentProduct() {
