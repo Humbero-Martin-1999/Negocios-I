@@ -5,13 +5,15 @@ import { AuthService } from '../../services/auth.service';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http'; // Add this import
+
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'],
   standalone: true,
-  imports: [CommonModule, FormsModule, RouterModule]
+  imports: [CommonModule, FormsModule, RouterModule, HttpClientModule]
 })
 export class LoginComponent {
   username = '';
