@@ -91,19 +91,19 @@ form.d-flex button.btn:hover {
 }
 
 .login-btn {
-  background-color: #4CAF50; /* Verde */
+  background-color: #232523; /* Verde */
   color: white;
   border: none;
-  padding: 8px 16px;
-  border-radius: 4px;
+  padding: 8px 8px;
+  border-radius: 2px;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 13px;
   transition: background-color 0.3s;
   margin-left: 10px;
 }
 
 .login-btn:hover {
-  background-color: #45a049;
+  background-color: #646965;
 }
 
 .login-btn i {
